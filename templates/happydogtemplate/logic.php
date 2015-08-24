@@ -8,6 +8,7 @@ $template 				= 'templates/'.$this->template;
 
 #----------------------------- Inject CSS -----------------------------#
 // Bootstrap Core CSS
+unset($this->_styleSheets[JURI::root(true).'/media/jui/css/bootstrap.min.css']);
 $doc->addStyleSheet($template.'/css/bootstrap.min.css');
 // Font Awesome
 $doc->addStyleSheet($template.'/font-awesome/css/font-awesome.min.css');
