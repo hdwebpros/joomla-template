@@ -32,8 +32,10 @@ $doc->addStyleSheet('//fonts.googleapis.com/css?family=Open+Sans:300italic,400it
 $doc->addStyleSheet('//fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic');
 
 #----------------------------- Inject JS -----------------------------#
-// Add JavaScript Frameworks
-JHtml::_('jquery.framework');
+// Add JQuery and not include 'no conflict'
+JHtml::_('jquery.framework', false);
+unset($doc->_scripts[$this->baseurl.'/media/jui/js/jquery-noconflict.js']);
+// Bootstrap 3 (discovers and uses our JUI link in folder)
 JHtml::_('bootstrap.framework');
 
 #----------------------------- Inject Extras -----------------------------#
