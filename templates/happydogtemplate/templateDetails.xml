@@ -18,5 +18,6 @@
 		<folder>less</folder>
 	</files>
 	<positions>
+		<position>menu</position>
 	</positions>
 </extension>
