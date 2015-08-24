@@ -1,7 +1,17 @@
 <?php defined('_JEXEC') or die;
 
-// Yank in the document via jFactory
+// Yank in the document and application via jFactory
 $doc 					= JFactory::getDocument();
+$app 					= JFactory::getApplication();
+
+// Detecting the view name
+$view 					= $app->input->getCmd('view', '');
+
+// Page Class Suffix
+$menuItem 				= $app->getMenu()->getActive();
+if (is_object($menuItem)){
+	$pageClass = $menuItem->params->get('pageclass_sfx');
+}
 
 // Define relative path to the  current template directory
 $template 				= 'templates/'.$this->template;
