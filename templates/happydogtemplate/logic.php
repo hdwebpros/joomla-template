@@ -21,10 +21,9 @@ $doc->addStyleSheet('//fonts.googleapis.com/css?family=Open+Sans:300italic,400it
 $doc->addStyleSheet('//fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic');
 
 #----------------------------- Inject JS -----------------------------#
-// JQuery
-$doc->addScript($template.'/js/jquery.js');
-// Bootstrap 3
-$doc->addScript($template.'/js/bootstrap.min.js');
+// Add JavaScript Frameworks
+JHtml::_('jquery.framework');
+JHtml::_('bootstrap.framework');
 
 #----------------------------- Inject Extras -----------------------------#
 // Metas
