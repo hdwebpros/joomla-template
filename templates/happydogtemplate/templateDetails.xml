@@ -19,6 +19,7 @@
 	</files>
 	<positions>
 		<position>menu</position>
+		<position>header</position>
 		<position>content-top</position>
 		<position>content-bottom</position>
 	</positions>
