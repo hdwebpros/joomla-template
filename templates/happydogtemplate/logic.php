@@ -18,8 +18,10 @@ $template 				= 'templates/'.$this->template;
 
 #----------------------------- Inject CSS -----------------------------#
 // Bootstrap Core CSS
-unset($this->_styleSheets[JURI::root(true).'/media/jui/css/bootstrap.min.css']);
-$doc->addStyleSheet($template.'/css/bootstrap.min.css');
+JHtmlBootstrap::loadCss();
+unset($this->_styleSheets[JURI::root(true).'/media/jui/css/bootstrap-extended.css']);
+unset($this->_styleSheets[JURI::root(true).'/media/jui/css/bootstrap-responsive.min.css']);
+
 // Font Awesome
 $doc->addStyleSheet($template.'/font-awesome/css/font-awesome.min.css');
 // Animate CSS
