@@ -31,3 +31,14 @@ JHtml::_('bootstrap.framework');
 #----------------------------- Inject Extras -----------------------------#
 // Metas
 $doc->setMetaData( 'viewport', 'width=device-width, initial-scale=1.0' );
+
+#----------------------------- Get rid of extra crap -----------------------------#
+// Remove JCaption 
+unset($this->_scripts[JURI::root(true).'/media/system/js/caption.js']);
+// Get rid of JCaption
+if (isset($this->_script['text/javascript']))
+{
+    $this->_script['text/javascript'] = preg_replace('%jQuery\(window\)\.on\(\'load\',\s*function\(\)\s*{\s*new\s*JCaption\(\'img\.caption\'\);\s*}\);\s*%', '', $this->_script['text/javascript']);
+    if (empty($this->_script['text/javascript']))
+        unset($this->_script['text/javascript']);
+}
